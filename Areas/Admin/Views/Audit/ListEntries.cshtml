@@ -1,0 +1,17 @@
+﻿@model PagedListContainer<IMetaObject>
+
+@section Head {
+    <style>
+        .list_NewValue {
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+}
+
+@{
+	Layout = "_Layout";
+}
+
+<partial name="~/Areas/Admin/Views/Render/PagedList.cshtml" model="Model" />

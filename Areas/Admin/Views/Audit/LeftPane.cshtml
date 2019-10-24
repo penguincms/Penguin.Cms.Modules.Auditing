@@ -1,0 +1,14 @@
+﻿<ul>
+    @foreach (string objectType in TypeFactory.GetDerivedTypes(typeof(Entity)).Select(t => t.FullName))
+	{
+    <li>
+        @{string Link =  $"/Admin/Audit/ListEntries?TypeName={objectType}";}
+        <a href="@Link" @Html.Attribute("class", "selected", string.Equals(Context.Request.Path, Link))>
+            @Html.MaterialIcon("list")
+            <span>
+                @objectType.FromLast(".")
+            </span>
+        </a>
+    </li>
+	}
+</ul>
