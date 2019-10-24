@@ -1,43 +1,38 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
-
+<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <Nullable>enable</Nullable>
     <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+    <PackageProjectUrl>https://github.com/penguincms/Penguin.Cms.Modules.Auditing</PackageProjectUrl>
+    <Version>1.0.0</Version>
+    <Description>Not Available</Description>
   </PropertyGroup>
-
   <ItemGroup>
     <Content Remove="wwwroot\**\*" />
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Include="wwwroot\**\*" />
   </ItemGroup>
-
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="Areas\Admin\Views\Audit\Index.cshtml" />
     <None Include="Areas\Admin\Views\Audit\LeftPane.cshtml" />
     <None Include="Areas\Admin\Views\Audit\ListEntries.cshtml" />
     <None Include="_ViewImports.cshtml" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="3.0.0" />
     <PackageReference Include="Penguin.Cms.Abstractions" Version="1.0.0" />
     <PackageReference Include="Penguin.Cms.Auditing.Repositories" Version="2.0.0" />
     <PackageReference Include="Penguin.Cms.Web" Version="1.0.0" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Penguin.Cms.Modules.Admin\Penguin.Cms.Modules.Admin.csproj" />
     <ProjectReference Include="..\Penguin.Cms.Modules.Core\Penguin.Cms.Modules.Core.csproj" />
     <ProjectReference Include="..\Penguin.Cms.Modules.Dynamic\Penguin.Cms.Modules.Dynamic.csproj" />
   </ItemGroup>
-
-
+  <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
 </Project>
