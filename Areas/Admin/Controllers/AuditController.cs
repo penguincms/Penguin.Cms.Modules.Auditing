@@ -6,6 +6,7 @@ using Penguin.Cms.Modules.Core.Models;
 using Penguin.Reflection.Serialization.Abstractions.Interfaces;
 using Penguin.Reflection.Serialization.Constructors;
 using Penguin.Reflection.Serialization.Objects;
+using Penguin.Security.Abstractions.Interfaces;
 using System;
 using System.Linq;
 
@@ -15,7 +16,7 @@ namespace Penguin.Cms.Modules.Auditing.Areas.Admin.Controllers
     {
         protected AuditEntryRepository AuditEntryRepository { get; set; }
 
-        public AuditController(AuditEntryRepository auditEntryRepository, IServiceProvider serviceProvider) : base(serviceProvider)
+        public AuditController(AuditEntryRepository auditEntryRepository, IServiceProvider serviceProvider, IUserSession userSession) : base(serviceProvider, userSession)
         {
             AuditEntryRepository = auditEntryRepository;
         }
