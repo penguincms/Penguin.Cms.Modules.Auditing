@@ -39,7 +39,7 @@ namespace Penguin.Cms.Modules.Auditing.Areas.Admin.Controllers
                 Count = count
             };
 
-            model.Items.AddRange(FilterQuery(AuditEntryRepository.All).OrderByDescending(a => a.Logged).Skip(page * count).Take(count).ToList().Select(o => { IMetaObject me = new MetaObject(o, c); me.Hydrate(); return me; }));
+            model.Items.AddRange(FilterQuery(AuditEntryRepository.All).OrderByDescending(a => a.Logged).Skip(page * count).Take(count).ToList().Select(o => { MetaObject me = new MetaObject(o, c); me.Hydrate(); return me; }));
 
             if (Target.HasValue)
             {
