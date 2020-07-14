@@ -24,7 +24,7 @@ namespace Penguin.Cms.Modules.Auditing.ComponentProviders
                                Href = "/Admin/Audit/ListEntries",
                                Permissions = new List<ISecurityGroupPermission>()
                                {
-                                   this.CreatePermission(RoleNames.SYS_ADMIN, PermissionTypes.Read | PermissionTypes.Write)
+                                   CreatePermission(RoleNames.SYS_ADMIN, PermissionTypes.Read | PermissionTypes.Write)
                                }
                            },
                     }
