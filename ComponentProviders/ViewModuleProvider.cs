@@ -4,7 +4,7 @@ using Penguin.Cms.Entities;
 using Penguin.Cms.Modules.Dynamic.Areas.Admin.Models;
 using Penguin.Cms.Web.Modules;
 using Penguin.Reflection.Serialization.Abstractions.Interfaces;
-using Penguin.Reflection.Serialization.Extensions;
+using Penguin.Reflection.Serialization.Extensions.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,7 +16,7 @@ namespace Penguin.Cms.Modules.Auditing.ComponentProviders
 
         public ViewModuleProvider(AuditEntryRepository auditEntryRepository)
         {
-            AuditEntryRepository = auditEntryRepository;
+            this.AuditEntryRepository = auditEntryRepository;
         }
 
         public IEnumerable<ViewModule> GetComponents(Entity Id)
