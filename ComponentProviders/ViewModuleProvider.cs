@@ -16,7 +16,7 @@ namespace Penguin.Cms.Modules.Auditing.ComponentProviders
 
         public ViewModuleProvider(AuditEntryRepository auditEntryRepository)
         {
-            this.AuditEntryRepository = auditEntryRepository;
+            AuditEntryRepository = auditEntryRepository;
         }
 
         public IEnumerable<ViewModule> GetComponents(Entity Id)

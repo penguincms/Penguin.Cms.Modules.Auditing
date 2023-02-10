@@ -32,14 +32,14 @@ namespace Penguin.Cms.Modules.Auditing.Areas.Admin.Controllers
 
             MetaConstructor c = Constructor;
 
-            PagedListContainer<IMetaObject> model = new PagedListContainer<IMetaObject>
+            PagedListContainer<IMetaObject> model = new()
             {
                 TotalCount = FilterQuery(AuditEntryRepository.All).Count(),
                 Page = page,
                 Count = count
             };
 
-            model.Items.AddRange(FilterQuery(AuditEntryRepository.All).OrderByDescending(a => a.Logged).Skip(page * count).Take(count).ToList().Select(o => { MetaObject me = new MetaObject(o, c); me.Hydrate(); return me; }));
+            model.Items.AddRange(FilterQuery(AuditEntryRepository.All).OrderByDescending(a => a.Logged).Skip(page * count).Take(count).ToList().Select(o => { MetaObject me = new(o, c); me.Hydrate(); return me; }));
 
             if (Target.HasValue)
             {
@@ -51,7 +51,7 @@ namespace Penguin.Cms.Modules.Auditing.Areas.Admin.Controllers
                 model.HiddenColumns.Add(nameof(TypeName));
             }
 
-            return this.View(model);
+            return View(model);
         }
     }
 }
