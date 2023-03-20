@@ -1,4 +1,6 @@
-﻿<ul>
+﻿@using Loxifi
+
+<ul>
     @foreach (string objectType in TypeFactory.GetDerivedTypes(typeof(Entity)).Select(t => t.FullName))
 	{
     <li>
