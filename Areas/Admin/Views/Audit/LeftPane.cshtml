@@ -1,7 +1,7 @@
 ﻿@using Loxifi
 
 <ul>
-    @foreach (string objectType in TypeFactory.GetDerivedTypes(typeof(Entity)).Select(t => t.FullName))
+    @foreach (string objectType in TypeFactory.Default.GetDerivedTypes(typeof(Entity)).Select(t => t.FullName))
 	{
     <li>
         @{string Link =  $"/Admin/Audit/ListEntries?TypeName={objectType}";}
